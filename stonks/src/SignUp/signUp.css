@@ -1,8 +1,8 @@
-.signUp-body{
-    background-color: #282c34;
+.login{
+    background-color: var(--background);
     min-height: 100vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
@@ -11,11 +11,18 @@
 .username, .password{
     margin: 5px;
 }
-.signUp-button{
+.submit{
+    display: flex;
+    justify-content: center;
+}
+.entry{
+    display: flex;
+    justify-content: center; 
+}
+.submit-button{
     background-color:gold;
     margin: 5px;
 }
-.signUP-button:hover {
+.submit-button:hover {
     background-color: goldenrod; 
-  }
-
+}
