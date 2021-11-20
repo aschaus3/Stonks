@@ -1,4 +1,5 @@
 import React from 'react';
+import { Collapse } from 'react-react-bootstrap';
 import './coin.css';
 
 //
@@ -16,8 +17,8 @@ const Coin = ({image, name, symbol, price, volume, priceChange, marketCap}) => {
                     <h1 className="coinPrice">${price}</h1>
                     <h1 className="coinVolume">${volume.toLocaleString()}</h1>
 
-                    {priceChange < 0 ? ( 
-                      <h1 className="red" >{priceChange.toFixed(2)}%</h1> 
+                    {priceChange < 0 ? (
+                      <h1 className="red" >{priceChange.toFixed(2)}%</h1>
                     ) : (
                       <h1 className="green" >{priceChange.toFixed(2)}%</h1>
                     )}
@@ -26,9 +27,11 @@ const Coin = ({image, name, symbol, price, volume, priceChange, marketCap}) => {
                     </h1>
                 </div>
             </div>
+            <Collapse>
+            </Collapse>
         </div>
     );
 };
-    
+
 
 export default Coin;
