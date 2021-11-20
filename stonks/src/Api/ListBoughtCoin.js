@@ -2,10 +2,10 @@ import React, { useEffect, useState, useContext } from 'react';
 import CoinGecko from './CoinGecko';
 import Coin from './Coin';
 import { WatchList } from './context/WatchList';
-import './listfavcoin.css'
+import './listboughtcoin.css'
 
 
-const ListFavCoin =()=> {
+const ListBoughtCoin =()=> {
 
     const [ coins, setCoins ] = useState([])
     const {watchList, deleteCoin } = useContext(WatchList)
@@ -62,5 +62,5 @@ const ListFavCoin =()=> {
 
 }
 
-export default ListFavCoin;
+export default ListBoughtCoin;
 
