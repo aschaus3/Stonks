@@ -1,5 +1,5 @@
 .login-body{
-    background-color: #282c34;
+    background-color: var(--background);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -31,6 +31,7 @@
     border-radius: 2px;
     border-color:grey;
     padding: 5px;
+    margin-left: 10px;
 }
 
 #Login-Link:hover{

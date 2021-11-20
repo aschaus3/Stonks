@@ -16,10 +16,10 @@ const port = 5000;
 // Middlewares
 app.use(cors());
 
-// connect the app to the route
-app.get('/testAPI', testAPIRoute);
-app.post('/add-user', addUser);
-app.post('/authenticate-user', authenticateUser);
+// connect the app to the routes
+app.use('/', testAPIRoute);
+app.use('/add-user', addUser);
+app.use('/authenticate-user', authenticateUser);
 
 // app listing on the specified port
 app.listen(port);

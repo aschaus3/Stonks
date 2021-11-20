@@ -9,11 +9,11 @@
   display: flex;
   justify-content: space-between;
   background-color: gold;
-  color: var(--bs-dark);
+  color: var(--background);
 }
 
 .loginUp-button{
-  background-color:#282c34;
+  background-color:var(--background);
   margin: 5px;
   text-decoration: none;
   align-items: center;
@@ -25,13 +25,6 @@
 }
 
 #header-middle{
-  margin-top: 10px;
-}
-
-.logout-button {
-  background-color: #282c34; 
-  color: gold;
-  margin: 5px;
   margin-top: 10px;
 }
 

@@ -6,12 +6,20 @@ const { getAllUsers, addUser } = require('../database/asyncQueries');
 // use the express router
 const router = express.Router();
 
-// body parser to be able to read post data
-router.use(bodyParser.urlencoded({extended: true}));
+// router middlewares
+router.use(express.urlencoded({
+  extended: true
+}));
 
 router.post('/', (req, res) => {
   const username = req.body.username;
   let password = req.body.password;
+
+  if (!username || !password) {
+    res.send({ errMsg: 'Invalid Username and/or Password!' });
+    return;
+  }
+
   password = cryptoJS.AES.encrypt(JSON.stringify({ password }), 'secret').toString();
 
   getAllUsers().then((users) => {
