@@ -1,9 +1,8 @@
 import React from 'react';
 
-function login() {
+function Login() {
     return (
       <div className="App">
-        <Header/>
         <div className="App-body">
           <div className="stonk-container">
             <div className="stonk">
@@ -15,9 +14,8 @@ function login() {
             </div>
           </div>
         </div>
-        <Footer/>
       </div>
     );
   }
   
-  export default login;
+  export default Login;
