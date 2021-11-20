@@ -32,7 +32,7 @@ function Table()    {
     //filters through coins
     const filteredCoins = coins.filter(coin =>
             coin.name.toLowerCase().includes(search.toLowerCase())
-        )
+    )
 
     //UI element
     return(
