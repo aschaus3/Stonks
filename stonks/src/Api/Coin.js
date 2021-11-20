@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Collapse } from 'react-bootstrap';
 import './coin.css';
 import { Link } from 'react-router-dom';
@@ -6,15 +6,16 @@ import { Link } from 'react-router-dom';
 
 //
 const Coin = ({image, name, symbol, price, volume, priceChange, marketCap}) => {
-  let open = false;
+  const [open, toggleOpen] = useState(false);
 
-  let toggleClick = () => {
-    open = !open;
+  const toggleDisplay = () => {
+    toggleOpen(!open);
   }
+
     //UI element
     return (
-        <div className="coinContainer" onClick={toggleClick}>
-            <div className="coinRow">
+      <div className="coinContainer">
+            <div className="coinRow" onClick={() => toggleDisplay()}>
                 <div className="coin">
                     <img src={image} alt="crypto"></img>
                     <h1>{name}</h1>
@@ -35,13 +36,15 @@ const Coin = ({image, name, symbol, price, volume, priceChange, marketCap}) => {
                 </div>
                 <div className="buy-button">
                     <Link to="/Trade" className="buy-button" >
-                        Buy
+              Buy
                     </Link>
                 </div>
+              <div>
+                <Collapse in={open}>
+                  <h1>Extra Content</h1>
+                </Collapse>
+              </div>
             </div>
-            <Collapse in={open}>
-              <h1>Extra Content</h1>
-            </Collapse>
         </div>
     );
 };
