@@ -6,7 +6,7 @@ function Header()    {
     return(
         <div className={ "header-container" }>
           <img src={"https://pbs.twimg.com/profile_images/1280883056979726339/9YesHxc2_400x400.jpg"} className={"img-icon"} />
-            Hello
+            Stonks
         </div>
     );
 }
