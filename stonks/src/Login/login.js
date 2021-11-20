@@ -1,5 +1,6 @@
 import React from 'react';
 import './login.css'
+import { Link } from 'react-router-dom';
 
 function Login() {
     return (
@@ -8,7 +9,7 @@ function Login() {
             <div> Login </div> 
             <input placeholder={"Username"} className="username" type="text"/>
             <input placeholder={"Password"} className="password" type="password" />
-            <button className="login-button"> Login </button>
+            <Link to="../App"> Link </Link>
             <div>
                 Don't have an account,
                 <button className="login-button"> Sign Up </button>
