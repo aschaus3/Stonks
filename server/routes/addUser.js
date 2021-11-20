@@ -20,6 +20,7 @@ router.post('/', (req, res) => {
     return;
   }
 
+  // encrypt password
   password = cryptoJS.AES.encrypt(JSON.stringify({ password }), 'secret').toString();
 
   getAllUsers().then((users) => {
