@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Coin from './Coin'
 import './table.css'
+import { StickyContainer, Sticky } from 'react-sticky'
 
 //https://api.coingecko.com/api/v3/coins/markets?vs_currency=CAD&order=market_cap_desc&per_page=100&page=1&sparkline=false
 
@@ -34,7 +35,7 @@ function Table()    {
 
     //UI element
     return(
-        <div className="coinApp">
+            <div className="coinApp">
             <div className="coinSearch">
                 <h1 className="coinText">Search a Currency</h1>
                 <form className="searchForm"> 
@@ -55,6 +56,7 @@ function Table()    {
             })}
         
         </div>
+        
     );
 }
 
