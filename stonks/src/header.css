@@ -10,11 +10,18 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: gold;
+  color: var(--bs-dark);
 }
 
 .search-bar {
   border-radius: 5px;
   border: 2px solid #f1f1f1;
   margin-right: 5px;
+}
+
+.icons {
+  padding: 5px;
+  color: var(--dark);
 }
 
