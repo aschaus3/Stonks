@@ -11,9 +11,11 @@ const Coin = ({image, name, symbol, price, volume, priceChange, marketCap}) => {
                     <img src={image} alt="crypto"></img>
                     <h1>{name}</h1>
                     <h1 className="coinSymbol">{symbol}</h1>
-                </div>
-                <div className="coinData">
                     <h1 className="coinPrice">${price}</h1>
+                </div>
+                {/*
+                <div className="coinData">
+                    
                     <h1 className="coinVolume">${volume.toLocaleString()}</h1>
 
                     {priceChange < 0 ? ( 
@@ -25,6 +27,7 @@ const Coin = ({image, name, symbol, price, volume, priceChange, marketCap}) => {
                         Mkt Cap: ${marketCap.toLocaleString()}
                     </h1>
                 </div>
+                */}
             </div>
         </div>
     );
