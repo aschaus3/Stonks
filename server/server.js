@@ -1,22 +1,26 @@
 // import required packages
 const express = require('express');
+const cors = require('cors');
+
+// import routes
+const testAPIRoute = require('./routes/testAPI');
+const addUser = require('./routes/addUser');
+const authenticateUser = require('./routes/authenticateUser');
 
 // create the server object
 const app = express();
-const router  = express.Router();
 
 // specify port number
 const port = 5000;
 
-// routes for the server
-router.get('/', (req, res) => {
-  res.send({
-    'message': 'This is a message from express'
-  });
-});
+// Middlewares
+app.use(cors());
 
-// let the server use the express router
-app.get('/', router);
+// connect the app to the route
+app.get('/testAPI', testAPIRoute);
+app.post('/add-user', addUser);
+app.post('/authenticate-user', authenticateUser);
 
 // app listing on the specified port
 app.listen(port);
+console.log('Server started at http://localhost:' + port);
