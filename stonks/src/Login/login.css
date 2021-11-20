@@ -10,6 +10,7 @@
 }
 .username, .password{
     margin: 5px;
+    padding: 5px;
 }
 .login-button{
     background-color:gold;
@@ -29,6 +30,7 @@
     padding-right: 5px;
     border-radius: 2px;
     border-color:grey;
+    padding: 5px;
 }
 
 #Login-Link:hover{
