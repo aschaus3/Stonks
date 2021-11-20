@@ -1,8 +1,9 @@
 import React from 'react';
 import './App.css';
-import Header from './Header'
-import Footer from './Footer'
+
 import Table from './Api/Table'
+import Header from './Header/Header'
+import Footer from './Footer/Footer'
 
 function App() {
   return (

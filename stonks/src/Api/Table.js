@@ -22,10 +22,12 @@ function Table()    {
             }).catch(err => console.log(err))
     }, []);
 
+    //handling change in input
     const handleChange = e =>   {
         setSearch(e.target.value);
     }
 
+    //filters through coins
     const filteredCoins = coins.filter(coin =>
             coin.name.toLowerCase().includes(search.toLowerCase())
         )
