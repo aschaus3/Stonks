@@ -1,0 +1,12 @@
+.img-icon {
+  border-radius: 50%;
+  margin: left;
+  height: 50px;
+}
+
+.header-container {
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+}
+
