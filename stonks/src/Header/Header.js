@@ -10,8 +10,7 @@ function Header()    {
           Stonks
           </h4>
         <div>
-            <i className={"fa fa-search icons"}></i>
-            <input placeholder={"Search"} className="search-bar" />
+            <button className="logout-button" > Logout </button>
           </div>
         </div>
     );
