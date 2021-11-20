@@ -45,12 +45,24 @@ class SignUp extends Component
 
   render() {
     return (
+      <div className="login">
+      <div classname="form">
       <form onSubmit={this.onSubmit}>
+        <div>
         <button onClick={() => this.testBackend()}>test</button>
-        <input id="usr" type="text" placeholder="username" ref={this.usrName}/>
-        <input type="text" placeholder="password" ref={this.pass}/>
-        <input type="submit" />
+        </div>
+        <div className = "entry">
+        <pre>
+          Username: &nbsp; <input id="usr" type="text" ref={this.usrName} className="username"/><br></br>
+          Password: &nbsp; <input type="text" ref={this.pass} className="password"/>
+        </pre>
+        </div>
+        <div className="submit">
+        <input type="submit" className="submit-button" />
+        </div>
       </form>
+      </div>
+      </div>
     );
   }
 }
