@@ -26,10 +26,10 @@ const Coin = ({image, name, symbol, price, volume, priceChange, marketCap}) => {
                     ) : (
                     <h1 className="green" >{priceChange.toFixed(2)}%</h1>
                     )}
-                    {/*<Link to="/Trade" state={{from:name}}className="buy-button" >
+                    {<Link to="/Trade" state={{cName:name, cImg:image}}className="buy-button" >
                         Buy
                     </Link>
-                    */}
+                    }
                     </div>
                     <div className="iconDiv">
                         <FaChevronCircleDown className="icon"/>
