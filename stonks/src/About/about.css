@@ -34,7 +34,7 @@
 .img{
     border-radius: 50%;
     padding: 2px;
-    width:40%; /* you can use % */
+    width:30%;
     height:auto;
     justify-self: center;
 }
