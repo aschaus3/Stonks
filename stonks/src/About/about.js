@@ -15,8 +15,6 @@ function About(){
             <Link id="Home-Link" to="/App">Home</Link>
           </div>
           <div className="about-body">
-            <br></br>
-            <br></br>
             <h1>&emsp;About</h1>
             <p>&emsp; &emsp;For Hack Western 8, we decided to create a cryptocurrency marketplace website. Using the CoinkGecko API,
                <br></br>&emsp; &emsp;our website retrieves and displays data on over 150 cryptocurrencies. We also added a simulated marketplace, 
