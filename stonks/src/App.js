@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.css';
+
+import Table from './Api/Table'
 import Header from './Header/Header'
 import Footer from './Footer/Footer'
 
@@ -8,15 +10,7 @@ function App() {
     <div className="App">
       <Header/>
       <div className="App-body">
-        <div className="stonk-container">
-          <div className="stonk">
-              <h1>Fav Stonks</h1>
-          </div>
-
-          <div className="stonk">
-              <h1>Top Stonks</h1>
-          </div>
-        </div>
+        <Table/>
       </div>
       <Footer/>
     </div>
