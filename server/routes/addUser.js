@@ -10,6 +10,7 @@ const router = express.Router();
 router.use(express.urlencoded({
   extended: true
 }));
+router.use(express.json());
 
 router.post('/', (req, res) => {
   const username = req.body.username;
