@@ -4,6 +4,7 @@ import './index.css';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import App from './App';
 import Login from './Login/login';
+import SignUp from './SignUp/signUp';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
@@ -11,6 +12,7 @@ ReactDOM.render(
     <Router>
       <Routes>
         <Route path="/App" element={<App />}></Route>
+        <Route path="/signUp" element={<SignUp />}></Route>
         <Route path="/" element={<Login />}></Route>
       </Routes>
     </Router>

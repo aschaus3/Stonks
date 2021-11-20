@@ -18,7 +18,6 @@ function SignUp() {
             <input placeholder={"Username"} className="username" type="text"/>
             <input placeholder={"Password"} className="password" type="password" />
             <input placeholder={"Confirm Password"} className="password" type="password" />
-            <button className="signUp-button" onClick={()=> navigate("../Login/login")} id="component"> SignUp</button>
 
         </div>
         
