@@ -15,10 +15,10 @@ function Login() {
             <div> Login </div> 
             <input placeholder={"Username"} className="username" type="text"/>
             <input placeholder={"Password"} className="password" type="password" />
+            <Link id="Login-Link" to="/App">Home</Link>
             <div>
                 Don't have an account,
                 <button className="login-button"> Sign Up </button>
-                <Link to="/App">Home</Link>
             </div>
         </div>
       </div>
