@@ -6,8 +6,10 @@ const router = express.Router();
 // import the db connection
 const { createConnection } = require('../database/DBVariables');
 
-// router middleware
-router.use(bodyParser.urlencoded({extended: true}));
+// router middlewares
+router.use(express.urlencoded({
+  extended: true
+}));
 
 router.post('/', (req, res) => {
 

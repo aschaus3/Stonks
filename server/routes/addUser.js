@@ -6,8 +6,10 @@ const { getAllUsers, addUser } = require('../database/asyncQueries');
 // use the express router
 const router = express.Router();
 
-// body parser to be able to read post data
-router.use(bodyParser.urlencoded({extended: true}));
+// router middlewares
+router.use(express.urlencoded({
+  extended: true
+}));
 
 router.post('/', (req, res) => {
   const username = req.body.username;
