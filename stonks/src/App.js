@@ -2,21 +2,14 @@ import React from 'react';
 import './App.css';
 import Header from './Header'
 import Footer from './Footer'
+import Table from './Api/Table'
 
 function App() {
   return (
     <div className="App">
       <Header/>
       <div className="App-body">
-        <div className="stonk-container">
-          <div className="stonk">
-              <h1>Fav Stonks</h1>
-          </div>
-
-          <div className="stonk">
-              <h1>Top Stonks</h1>
-          </div>
-        </div>
+        <Table/>
       </div>
       <Footer/>
     </div>
