@@ -18,7 +18,7 @@
 }
 
 
-.buy-button{
+/*.buy-button{
     background-color:gold;
     padding: 5px;
     text-decoration: none;
@@ -28,7 +28,7 @@
     border-radius: 5px;
     font-size: 16px;
     margin-top: 3px;
-}
+}*/
 
 .coinData h1 {
     font-size: 16px;
@@ -61,9 +61,11 @@
 }
 
 .coin h1{
-    font-size: 16px;
+    font-size: 18px;
     width: 150px;
-    padding-top:8px;
+    vertical-align: center;
+    font-weight: 500;
+    padding-top: 14px;
 }
 
 
@@ -71,6 +73,7 @@
     height: 30px;
     width: 30px;
     margin-right: 10px;
+    padding-top: 2px;
 }
 
 .coinSymbol {
@@ -100,14 +103,22 @@
 }
 
 .red    {
-    color: red;
+    color: #b40f3a;
 }
 
 .green  {
-    color: #11d811;
+    color: #017d6f;
 }
 /*
     *css to expand display
 */
 
+.icon   {
+    font-size: 16px;
+    color: gold;
+}
+
+.coin:hover .icon {
+    color: var(--background);
+}
   
