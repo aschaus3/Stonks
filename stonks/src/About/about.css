@@ -1,10 +1,10 @@
-.help-body{
+.about-body{
     background-color: var(--background);
     min-height: 93.75vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: left;
+    justify-content: top;
     font-size: calc(10px + 2vmin);
     color: white;
 }
@@ -26,4 +26,15 @@
     display: flex;
     justify-content: right;
     padding: 5px;
+}
+.image{
+    display: flex;
+    justify-content: center;
+}
+.img{
+    border-radius: 50%;
+    padding: 2px;
+    width:40%; /* you can use % */
+    height:auto;
+    justify-self: center;
 }
