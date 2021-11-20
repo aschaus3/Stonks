@@ -10,11 +10,9 @@ function Header()    {
           <h4 id="header-middle">
           Stonks
           </h4>
-          <div>
-              <Link to="/">
-                <div>
+          <div className="loginUp-button">
+              <Link to="/" className="loginUp-button" >
                 Login
-                </div>
               </Link>
           </div>
         </div>
