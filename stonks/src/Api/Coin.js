@@ -1,13 +1,14 @@
 import React from 'react';
-import { Collapse } from 'react-react-bootstrap';
+import { Collapse } from 'react-bootstrap';
 import './coin.css';
 
 //
 const Coin = ({image, name, symbol, price, volume, priceChange, marketCap}) => {
+  let open = false;
     //UI element
     return (
         <div className="coinContainer">
-            <div className="coinRow">
+            <div className="coinRow" onClick={!open}>
                 <div className="coin">
                     <img src={image} alt="crypto"></img>
                     <h1>{name}</h1>
@@ -27,7 +28,8 @@ const Coin = ({image, name, symbol, price, volume, priceChange, marketCap}) => {
                     </h1>
                 </div>
             </div>
-            <Collapse>
+            <Collapse in={open}>
+              <h1>Extra Content</h1>
             </Collapse>
         </div>
     );
