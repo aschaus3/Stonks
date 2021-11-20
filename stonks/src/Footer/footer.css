@@ -10,7 +10,7 @@
     background-color: gold;
     color: var(--background);
 }
-.Help-Link{
+.About-Link{
   background-color:var(--background);
   margin: 5px;
   text-decoration: none;
