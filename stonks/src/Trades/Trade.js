@@ -16,17 +16,25 @@ import { useLocation } from 'react-router-dom'
 
 function Trade() {
     const location = useLocation()
-    const { from } = location.state
+    const { cName, cImg } = location.state
+    const coinName = cName
+    const coinImg = cImg
 
     return (
-      <div className="login">
-        <div className="login-body">
-            
-            <div> TradePage </div>
-            <div>{from}</div> 
-            
-        </div>
+        <body>
+      <div className="tradePage">
+            <img src={coinImg} alt="crypto"></img>
+            <h1> {coinName} TradePage </h1>
       </div>
+      <div className = 'graphs'>
+            <div>graph 1</div>
+            <div>graph 2</div>
+      </div>
+      <div className="tradePage-body">
+          <h1 className="buy-button">Buy</h1>
+          <h1 className = "sell-button">Sell</h1>
+        </div>
+      </body>
     );
   }
   
