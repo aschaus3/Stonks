@@ -1,3 +1,14 @@
+.img_icon {
+    border-radius: 50%;
+    height: 50px;
+    padding: 2px;
+}
+.footer-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 .help_button{
   width: 5%;
   background-color: #282c34; 
