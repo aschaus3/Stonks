@@ -1,6 +1,7 @@
 import react from 'react';
 import reactDom from 'react-dom';
 import './header.css'
+import { Link } from 'react-router-dom';
 
 function Header()    {
     return(
@@ -9,8 +10,10 @@ function Header()    {
           <h4 id="header-middle">
           Stonks
           </h4>
-        <div>
-            <button className="logout-button" > Logout </button>
+          <div className="loginUp-button">
+              <Link to="/" className="loginUp-button" >
+                Login
+              </Link>
           </div>
         </div>
     );

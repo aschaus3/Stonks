@@ -1,10 +1,11 @@
 import React from 'react';
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route,
   Link
 } from "react-router-dom";
+import App from '../App';
 import './login.css'
 
 function Login() {
@@ -14,7 +15,7 @@ function Login() {
             <div> Login </div> 
             <input placeholder={"Username"} className="username" type="text"/>
             <input placeholder={"Password"} className="password" type="password" />
-            <Link to="../App"> Link </Link>
+            <Link id="Login-Link" to="/App">Home</Link>
             <div>
                 Don't have an account,
                 <button className="login-button"> Sign Up </button>
@@ -23,5 +24,5 @@ function Login() {
       </div>
     );
   }
-  
-  export default Login;
+
+export default Login;
