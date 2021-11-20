@@ -17,7 +17,7 @@ const port = 5000;
 app.use(cors());
 
 // connect the app to the routes
-app.use('/testAPI', testAPIRoute);
+app.use('/', testAPIRoute);
 app.use('/add-user', addUser);
 app.use('/authenticate-user', authenticateUser);
 

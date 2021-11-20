@@ -13,7 +13,7 @@ async function getAllUsers() {
   let users;
 
   try {
-    users = query(`SELECT * FROM ${user}`);
+    users = await query(`SELECT * FROM ${user}`);
   } catch(err) {
     throw err;
   } finally {
@@ -34,7 +34,7 @@ async function addUser(username, password) {
   const query = util.promisify(conn.query).bind(conn);
 
   try {
-    users = query(`INSERT INTO ${user} VALUES (NULL, "${username}", "${password}")`);
+    await query(`INSERT INTO ${user} VALUES (NULL, "${username}", "${password}")`);
   } catch(err) {
     throw err;
   } finally {
@@ -46,5 +46,6 @@ async function addUser(username, password) {
 }
 
 module.exports = {
-  getAllUsers: getAllUsers
+  getAllUsers: getAllUsers,
+  addUser: addUser
 }

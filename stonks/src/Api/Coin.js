@@ -5,10 +5,14 @@ import './coin.css';
 //
 const Coin = ({image, name, symbol, price, volume, priceChange, marketCap}) => {
   let open = false;
+
+  let toggleClick = () => {
+    open = !open;
+  }
     //UI element
     return (
-        <div className="coinContainer">
-            <div className="coinRow" onClick={!open}>
+        <div className="coinContainer" onClick={toggleClick}>
+            <div className="coinRow">
                 <div className="coin">
                     <img src={image} alt="crypto"></img>
                     <h1>{name}</h1>
