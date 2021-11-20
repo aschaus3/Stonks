@@ -13,10 +13,11 @@ const Coin = ({image, name, symbol, price, volume}) => {
                     <p className="coinSymbol">{symbol}</p>
                 </div>
                 <div className="coinData">
-                    <p className="coinPrice">{price}</p>
+                    <p className="coinPrice">${price}</p>
                     <p className="coinVolume">${volume.toLocaleString()}</p>
-                </div>
 
+                    
+                </div>
             </div>
             
         </div>
