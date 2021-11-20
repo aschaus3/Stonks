@@ -3,8 +3,6 @@ import { Collapse } from 'react-bootstrap';
 import './coin.css';
 import { Link } from 'react-router-dom';
 
-
-//
 const Coin = ({image, name, symbol, price, volume, priceChange, marketCap}) => {
   let open = false;
 
@@ -13,15 +11,19 @@ const Coin = ({image, name, symbol, price, volume, priceChange, marketCap}) => {
   }
     //UI element
     return (
-        <div className="coinContainer" onClick={toggleClick}>
-                <div className="coinRow">
-                    <div className="coin">
-                        <img src={image} alt="crypto"></img>
+        <div className="coinContainer" >
+                <div className="coinRow" for="expend">
+                    <div className="coin" for="extend">
+                        <img src={image} alt="crypto" onClick={toggleClick}></img>
                         <h1>{name}</h1>
                         <h1 className="coinSymbol">{symbol}</h1>
                         <h1 className="coinPrice">${price}</h1>
+                        <div className="buy-button">
+                        <Link to="/Trade" className="buy-button" >
+                            Buy
+                        </Link>
+                    </div> 
                     </div>
-
                     {/*
                     <div className="coinData">
                         
@@ -38,16 +40,8 @@ const Coin = ({image, name, symbol, price, volume, priceChange, marketCap}) => {
                     </div>
 
                     */}
-
-                    <div className="buy-button">
-                        <Link to="/Trade" className="buy-button" >
-                            Buy
-                        </Link>
-                    </div>
                     
-                    <Collapse in={open}>
-                        <h1>Extra Content</h1>
-                    </Collapse>
+                    
                 </div>
                 
         </div>

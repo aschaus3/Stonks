@@ -11,33 +11,24 @@
     /* height: 80px; */
     border-bottom: 1px solid #d7d7d7;
     width: max-content;
-    margin: 30px;
+    margin-right: 20px;
+    margin-left: 20px;
     flex-direction: column;
     transition-duration: 0.3s;
 }
 
-.coinRow:hover {
-  filter: brightness(150%);
-  cursor: pointer;
-}
 
 .buy-button{
-    background-color:lime;
-    margin: 5px;
+    background-color:gold;
+    padding: 5px;
     text-decoration: none;
     align-items: center;
-    padding-top: 1px;
-    color: black;
+    color:var(--background);
     font-weight: bold;
     border-radius: 5px;
-    padding-left: 2px;
-    padding-right: 3px;
-  }
-
-.buy-button:hover{
-    color: black;
+    font-size: 16px;
+    margin-top: 3px;
 }
-
 
 .coinData h1 {
     font-size: 16px;
@@ -47,18 +38,32 @@
 .coin   {
     display: flex;
     justify-content: space-between;
+    flex-direction: row;
     align-items: center;
     padding-right: 24px;
     min-width: 800px;
-    margin-bottom: 10px;
-    padding-bottom: 30px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.coin:hover {
+    color: var(--background)!important;
+    background: gold; /* make this whatever you want */
+    border-radius: 25px;
     
+}
+
+.coinBasic {
+    display: flex;
+    flex-direction: row;
+    vertical-align: middle;
+    justify-content: space-between;
 }
 
 .coin h1{
     font-size: 16px;
     width: 150px;
-    padding-top: 15px;
+    padding-top:8px;
 }
 
 
@@ -101,3 +106,8 @@
 .green  {
     color: #11d811;
 }
+/*
+    *css to expand display
+*/
+
+  

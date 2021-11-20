@@ -43,7 +43,6 @@ function Table()    {
             </div>
         
             <div className="coinApp">
-                
                 <div className="coinSearch">
                     <h1 className="coinText">Search a Currency</h1>
                     <form className="searchForm"> 
