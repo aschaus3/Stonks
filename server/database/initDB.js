@@ -10,7 +10,9 @@ conn.connect();
 conn.query(`
     DROP TABLE IF EXISTS ${user};
   `, (err) => {
-  console.log(err);
+    if (err) throw (err);
+
+    console.log(`Successfully Dropped ${user} Table!`);
 });
 
 // create the table for users
@@ -22,7 +24,9 @@ conn.query(`
     ,PRIMARY KEY (UserID)
   );
 `, (err) => {
-  console.log(err);
+  if (err) throw (err);
+
+  console.log(`Successfully Created ${user} Table!`);
 });
 
 // close the connection

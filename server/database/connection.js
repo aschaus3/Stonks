@@ -1,13 +1,15 @@
-import mysql from 'mysql';
+const mysql = require('mysql');
 
 // function to create a db connection
-export default function createConnection() {
+function createConnection() {
   const connection = mysql.createConnection({
-    host: '',
-    user: '',
-    password: '',
-    database: ''
+    host: '104.154.160.114',
+    user: 'root',
+    password: 'hackwestern@8',
+    database: 'stonks'
   });
 
   return connection;
 }
+
+module.exports = createConnection;
