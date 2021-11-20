@@ -1,5 +1,10 @@
 import react from 'react';
-import reactDom from 'react-dom';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
 import './footer.css'
 
 function Footer()    {
@@ -9,7 +14,7 @@ function Footer()    {
           <h4 id='footer-middle'>
             Stonks
           </h4>
-          <button className="help_button" > Help </button>
+          <Link className="About-Link" to="/about">About</Link>
         </div>
     );
 }
