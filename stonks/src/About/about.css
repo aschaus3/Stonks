@@ -20,6 +20,10 @@
     padding: 5px;
     margin-left: 10px;
 }
+#Home-Link:hover{
+    background-color: goldenrod;
+}
+
 .home-Button{
     background-color: var(--background);
     min-height: 20 px;
