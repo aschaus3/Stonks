@@ -9,11 +9,11 @@ function App() {
       <Header/>
       <div className="App-body">
         <div className="stonk-container">
-          <div className="stonk-fav">
+          <div className="stonk">
               <h1>Fav Stonks</h1>
           </div>
 
-          <div className="stonk-top">
+          <div className="stonk">
               <h1>Top Stonks</h1>
           </div>
         </div>
