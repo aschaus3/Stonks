@@ -4,8 +4,8 @@ import './header.css'
 
 function Header()    {
     return(
-        <div>
-            Hello
+        <div class="header">
+            Stonks
         </div>
     );
 }
