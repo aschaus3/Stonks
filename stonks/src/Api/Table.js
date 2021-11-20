@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Coin from './Coin'
 import './table.css'
 import { StickyContainer, Sticky } from 'react-sticky'
-import ListFavCoin from './ListFavCoin';
+import ListBoughtCoin from './ListBoughtCoin';
 import AddCoin from './AddCoin';
 import axios from 'axios';
 
@@ -37,9 +37,9 @@ function Table()    {
     //UI element
     return(
         <div>
-            <div className="favCoin">
+            <div className="boughtCoinApp">
                 <AddCoin/>
-                <ListFavCoin/>
+                <ListBoughtCoin/>
             </div>
         
             <div className="coinApp">
