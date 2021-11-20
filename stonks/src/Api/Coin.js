@@ -19,7 +19,6 @@ const Coin = ({image, name, symbol, price, volume, priceChange, marketCap}) => {
                     <h1>{name}</h1>
                     <h1 className="coinSymbol">{symbol}</h1>
                     <h1 className="coinPrice">${price}</h1>
-                    <div className="buy-button">
 
                     {priceChange < 0 ? (
                     <h1 className="red" >{priceChange.toFixed(2)}%</h1>
@@ -30,7 +29,7 @@ const Coin = ({image, name, symbol, price, volume, priceChange, marketCap}) => {
                         Buy
                     </Link>
                     */}
-                    </div>
+
                     <div className="iconDiv">
                         <FaChevronCircleDown className="icon"/>
                     </div> 
