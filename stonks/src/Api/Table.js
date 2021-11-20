@@ -32,7 +32,7 @@ function Table()    {
     //filters through coins
     const filteredCoins = coins.filter(coin =>
             coin.name.toLowerCase().includes(search.toLowerCase())
-        )
+    )
 
     //UI element
     return(
@@ -43,7 +43,6 @@ function Table()    {
             </div>
         
             <div className="coinApp">
-                
                 <div className="coinSearch">
                     <h1 className="coinText">Search a Currency</h1>
                     <form className="searchForm"> 
