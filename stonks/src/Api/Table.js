@@ -33,6 +33,9 @@ function Table()    {
             coin.name.toLowerCase().includes(search.toLowerCase())
         )
 
+
+    
+
     //UI element
     return(
             <div className="coinApp">
@@ -43,13 +46,14 @@ function Table()    {
                             className="coinInput" onChange={handleChange}/>
                 </form>
             </div>
+            
             {filteredCoins.map(coin =>  {
                 return(
                     <Coin key={coin.id} name={coin.name}
                             price={coin.current_price} image={coin.image}
                             symbol={coin.symbol} marketCap={coin.market_cap}
                             priceChange={coin.price_change_percentage_24h}
-                            volume={coin.total_volume}>
+                            volume={coin.total_volume}>                         
 
                     </Coin>
                 )
@@ -59,5 +63,6 @@ function Table()    {
         
     );
 }
+    
 
 export default Table;

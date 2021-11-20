@@ -14,6 +14,12 @@ router.use(express.urlencoded({
 router.post('/', (req, res) => {
   const username = req.body.username;
   let password = req.body.password;
+
+  if (!username || !password) {
+    res.send({ errMsg: 'Invalid Username and/or Password!' });
+    return;
+  }
+
   password = cryptoJS.AES.encrypt(JSON.stringify({ password }), 'secret').toString();
 
   getAllUsers().then((users) => {

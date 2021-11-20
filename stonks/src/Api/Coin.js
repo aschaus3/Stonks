@@ -1,6 +1,8 @@
 import React from 'react';
 import { Collapse } from 'react-bootstrap';
 import './coin.css';
+import { Link } from 'react-router-dom';
+
 
 //
 const Coin = ({image, name, symbol, price, volume, priceChange, marketCap}) => {
@@ -30,6 +32,11 @@ const Coin = ({image, name, symbol, price, volume, priceChange, marketCap}) => {
                     <h1 className="coinMarketCap">
                         Mkt Cap: ${marketCap.toLocaleString()}
                     </h1>
+                </div>
+                <div className="buy-button">
+                    <Link to="/Trade" className="buy-button" >
+                        Buy
+                    </Link>
                 </div>
             </div>
             <Collapse in={open}>
