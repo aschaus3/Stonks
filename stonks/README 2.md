@@ -1,0 +1,2 @@
+# Stonks
+Crypto app
