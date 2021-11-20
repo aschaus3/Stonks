@@ -1,18 +1,18 @@
 import React from 'react';
+import './login.css'
 
 function Login() {
     return (
-      <div className="App">
-        <div className="App-body">
-          <div className="stonk-container">
-            <div className="stonk">
-                <h1>Fav Stonks</h1>
+      <div className="login">
+        <div className="login-body">
+            <div> Login </div> 
+            <input placeholder={"Username"} className="username" type="text"/>
+            <input placeholder={"Password"} className="password" type="password" />
+            <button className="login-button"> Login </button>
+            <div>
+                Don't have an account,
+                <button className="login-button"> Sign Up </button>
             </div>
-  
-            <div className="stonk">
-                <h1>Top Stonks</h1>
-            </div>
-          </div>
         </div>
       </div>
     );
