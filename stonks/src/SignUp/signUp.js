@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import './signUp.css';
+
+const URL = 'http://localhost:5000';
 
 class SignUp extends Component
 {
@@ -15,38 +18,13 @@ class SignUp extends Component
   {
     e.preventDefault();
     const data = new FormData(e.target);
-    // fetch('http://localhost:5000/add-user', {
-    fetch('/add-user', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: data
-    })
-      .then(response => response.json())
-      .then(function(body) {
-        console.log(body);
-      })
-      .catch((err) => {
-        throw err;
-      });
-  }
 
-  testBackend = () => {
-    console.log('method called');
-    fetch('/')
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        console.log(data);
-      }).catch((err) => {
-        console.log(err);
-      });
+    axios.post(URL + '/add-user', data);
   }
 
   render() {
     return (
       <form onSubmit={this.onSubmit}>
-        <button onClick={() => this.testBackend()}>test</button>
         <input id="usr" type="text" placeholder="username" ref={this.usrName}/>
         <input type="text" placeholder="password" ref={this.pass}/>
         <input type="submit" />
@@ -56,4 +34,4 @@ class SignUp extends Component
 }
 
 
-  export default SignUp;
+export default SignUp;
