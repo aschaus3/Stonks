@@ -4,16 +4,20 @@ import './App.css';
 import Table from './Api/Table'
 import Header from './Header/Header'
 import Footer from './Footer/Footer'
+import { WatchListContextProvider } from './Api/context/WatchList';
 
 function App() {
   return (
-    <div className="App">
-      <Header/>
-      <div className="App-body">
-        <Table/>
+    <WatchListContextProvider>
+      <div className="App">
+        <Header/>
+        <div className="App-body">
+          <Table/>
+        </div>
+        <Footer/>
       </div>
-      <Footer/>
-    </div>
+    </WatchListContextProvider>
+    
   );
 }
 

@@ -7,6 +7,7 @@ import Login from './Login/login';
 import SignUp from './SignUp/signUp';
 import About from './About/about'
 import reportWebVitals from './reportWebVitals';
+import Trade from './Trades/Trade';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -16,6 +17,7 @@ ReactDOM.render(
         <Route path="/signUp" element={<SignUp />}></Route>
         <Route path="/" element={<Login />}></Route>
         <Route path="/about" element={<About /> }></Route>
+        <Route path="/Trade" element={<Trade />}></Route>
       </Routes>
     </Router>
   </React.StrictMode>,
