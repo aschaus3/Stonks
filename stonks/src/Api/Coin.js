@@ -2,7 +2,7 @@ import React from 'react';
 import { Collapse } from 'react-bootstrap';
 import './coin.css';
 import { Link } from 'react-router-dom';
-import { FaChevronDown } from 'react-icons/fa';
+import { FaChevronCircleDown} from 'react-icons/fa';
 
 const Coin = ({image, name, symbol, price, volume, priceChange, marketCap}) => {
   let open = false;
@@ -20,13 +20,20 @@ const Coin = ({image, name, symbol, price, volume, priceChange, marketCap}) => {
                     <h1 className="coinSymbol">{symbol}</h1>
                     <h1 className="coinPrice">${price}</h1>
                     <div className="buy-button">
-                    <Link to="/Trade" state={{from:name}}className="buy-button" >
+
+                    {priceChange < 0 ? (
+                    <h1 className="red" >{priceChange.toFixed(2)}%</h1>
+                    ) : (
+                    <h1 className="green" >{priceChange.toFixed(2)}%</h1>
+                    )}
+                    {/*<Link to="/Trade" state={{from:name}}className="buy-button" >
                         Buy
                     </Link>
+                    */}
                     </div>
-                    <i >
-                        <FaChevronDown className="icon"/>
-                    </i> 
+                    <div className="iconDiv">
+                        <FaChevronCircleDown className="icon"/>
+                    </div> 
                 </div>
                 {/*
                 <div className="coinData">

@@ -39,7 +39,7 @@ const ListFavCoin =()=> {
         }
         
         return(
-            <ul className="favCoin-listComponent">
+            <ul className="boughtCoin-listComponent">
                 {coins.map(coin =>  {
                     return(
                         <Coin key={coin.id} name={coin.name} 
