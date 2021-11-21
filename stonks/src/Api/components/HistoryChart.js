@@ -6,7 +6,7 @@ Chart.register(LineController, LineElement, PointElement, LinearScale, Title, Ca
 const HistoryChart = ({data}) => {
 
     const chartRef = useRef();
-    const {chartResultsMonth.data.prices} = data;
+    //const {chartResultsMonth.data.prices} = data;
 
     useEffect(() => {
         if (chartRef && chartRef.current)   {
