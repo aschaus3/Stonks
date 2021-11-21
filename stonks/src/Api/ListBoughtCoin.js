@@ -7,8 +7,8 @@ import './listboughtcoin.css'
 
 const ListBoughtCoin =()=> {
 
-    const [ coins, setCoins ] = useState([])
-    const { watchList, deleteCoin } = useContext(WatchList)
+    const [ coins, setCoins ] = useState([]);
+    const { watchList, deleteCoin } = useContext(WatchList);
     const [ isLoading, setIsLoading ] = useState(false);
 
     useEffect(() => {

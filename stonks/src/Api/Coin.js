@@ -3,7 +3,7 @@ import './coin.css';
 import { FaChevronCircleDown, FaTrash } from 'react-icons/fa';
 import Expand from 'react-expand-animated';
 
-const Coin = ({ coin, image, name, symbol, price, volume, priceChange, marketCap, deleteCoin }) => {
+const Coin = ({ coin, image, name, symbol, price, volume, priceChange, marketCap, deleteCoin, id }) => {
   
   const [clicked, setClicked] = useState(false);
 
@@ -33,7 +33,7 @@ const Coin = ({ coin, image, name, symbol, price, volume, priceChange, marketCap
                     <h1 className="green" >{priceChange.toFixed(2)}%</h1>
                     )}
 
-                    <i >
+                    <i>
                         <FaChevronCircleDown className="icon" onClick={() => setClicked(!clicked)}/>
                     </i> 
                     
@@ -44,7 +44,7 @@ const Coin = ({ coin, image, name, symbol, price, volume, priceChange, marketCap
                     </div>
                     <a onClick={(e) => { 
                                             e.preventDefault();
-                                            deleteCoin(coin); 
+                                            deleteCoin(coin.id); 
                                         }}>
                         <FaTrash/> 
                     </a>
