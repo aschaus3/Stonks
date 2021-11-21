@@ -9,7 +9,9 @@ const Coin = ({ coin, image, name, symbol, price, volume, priceChange, marketCap
   const [clicked, setClicked] = useState(false);
   const {deleteCoin} = useContext(WatchList);
 
-  let coinName = name;
+  console.log(key);
+
+  let coinName = name.toLowerCase();
 
     //UI element
     return (
@@ -42,8 +44,8 @@ const Coin = ({ coin, image, name, symbol, price, volume, priceChange, marketCap
                     </i> 
                     <a onClick={(e) => { 
                                             e.preventDefault();
-                                            console.log(coin)
-                                            deleteCoin(coin.name);
+                                            console.log(coinName)
+                                            deleteCoin(coinName);
                                         }}>
                         <FaTrash/> 
                     </a>

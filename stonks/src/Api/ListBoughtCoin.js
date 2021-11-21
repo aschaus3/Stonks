@@ -11,6 +11,8 @@ const ListBoughtCoin =()=> {
     const { watchList, deleteCoin } = useContext(WatchList);
     const [ isLoading, setIsLoading ] = useState(false);
 
+    console.log(watchList);
+
     useEffect(() => {
         const fetchData = async () =>   {
             setIsLoading(true);
@@ -39,8 +41,9 @@ const ListBoughtCoin =()=> {
         return(
             <ul className="coinlist list-group mt-2">
                 {coins.map(coin =>  {
+                    const { id, name } = coin;
                     return(
-                        <Coin key={coin.id} name={coin.name} 
+                        <Coin key={name} name={coin.name} 
                         price={coin.current_price} image={coin.image}
                         symbol={coin.symbol} marketCap={coin.market_cap}
                         priceChange={coin.price_change_percentage_24h}
