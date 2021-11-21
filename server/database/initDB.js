@@ -1,11 +1,20 @@
 const cryptoJS = require('crypto-js');
-const { createConnection, user, transactions }  = require('./DBVariables');
+const { createConnection, user, watchList }  = require('./DBVariables');
 
 // create the connection
 const conn = createConnection();
 
 // connect to the database
 conn.connect();
+
+// drop the table if it exists
+conn.query(`
+    DROP TABLE IF EXISTS ${watchList};
+  `, (err) => {
+    if (err) throw (err);
+
+    console.log(`Successfully Dropped ${watchList} Table!`);
+});
 
 // drop the table if it exists
 conn.query(`
@@ -41,6 +50,19 @@ conn.query(`
   if (err) throw err;
 
   console.log('Successfully Added Sample User!');
+});
+
+// create the table for watchList
+conn.query(`
+  CREATE TABLE ${watchList} (
+    UserID INT
+    ,CoinID VARCHAR(50)
+    ,FOREIGN KEY (UserID) ${user}(UserID)
+  );
+`, (err) => {
+  if (err) throw (err);
+
+  console.log(`Successfully Created ${watchList} Table!`);
 });
 
 // close the connection
