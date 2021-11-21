@@ -8,8 +8,9 @@ import './listfavcoin.css'
 const ListFavCoin =()=> {
 
     const [ coins, setCoins ] = useState([])
-    const {watchList} = useContext(WatchList)
+    const {watchList, deleteCoin } = useContext(WatchList)
     const [ isLoading, setIsLoading ] = useState(false);
+
     console.log(watchList);
 
     useEffect(() => {
@@ -28,6 +29,8 @@ const ListFavCoin =()=> {
         fetchData();
     },[])
 
+
+
     const renderCoins = () =>   {
         if  (isLoading) {
             return(
@@ -36,14 +39,14 @@ const ListFavCoin =()=> {
         }
         
         return(
-            <ul className="favCoin-listComponent">
+            <ul className="boughtCoin-listComponent">
                 {coins.map(coin =>  {
                     return(
                         <Coin key={coin.id} name={coin.name} 
                         price={coin.current_price} image={coin.image}
                         symbol={coin.symbol} marketCap={coin.market_cap}
                         priceChange={coin.price_change_percentage_24h}
-                        volume={coin.total_volume}/>);
+                        volume={coin.total_volume} deleteCoin={deleteCoin} />);
                     
                 })}
             </ul>

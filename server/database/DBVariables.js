@@ -2,5 +2,6 @@ const createConnection = require('./connection');
 
 module.exports = {
   createConnection: createConnection,
-  user: 'Users'
+  user: 'Users',
+  transactions: 'Transactions'
 }

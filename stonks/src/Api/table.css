@@ -4,14 +4,11 @@
     border-left: 1px solid white;
     border-right: 1px solid white;
     border-radius: 15px;
-    margin-top: 80px !important;
-    padding-left: 100px;
-    padding-right: 100px;
+    margin-top: 50px !important;
     font-family:'Montserrat', sans-serif;
     color: #fff;
     position:static;
     min-height: 1000px;
-    min-width: 1150px;
     margin-bottom: 80px;
 }
 
@@ -43,4 +40,6 @@
 .coinInput::placeholder {
     color: #fff;    
 }
+
+
 

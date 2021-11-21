@@ -17,7 +17,11 @@ class SignUp extends Component
   handleSubmit(e)
   {
     e.preventDefault();
-    const data = new FormData(e.target);
+
+    let data = {
+      username: this.usrName.value,
+      password: this.pass.value
+    }
 
     axios.post(URL + '/add-user', data);
   }
@@ -25,15 +29,15 @@ class SignUp extends Component
   render() {
     return (
       <div className="login">
-      <div classname="form">
+      <div className="form">
       <form onSubmit={this.onSubmit}>
         <div>
         <button onClick={() => this.testBackend()}>test</button>
         </div>
         <div className = "entry">
         <pre>
-          Username: &nbsp; <input id="usr" type="text" ref={this.usrName} className="username"/><br></br>
-          Password: &nbsp; <input type="text" ref={this.pass} className="password"/>
+          Username: &nbsp; <input id="usr" type="text" ref={usr => (this.usrName = usr)} className="username"/><br></br>
+          Password: &nbsp; <input type="text" ref={pass => (this.pass = pass)} className="password"/>
         </pre>
         </div>
         <div className="submit">

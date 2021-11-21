@@ -10,6 +10,7 @@ const router = express.Router();
 router.use(express.urlencoded({
   extended: true
 }));
+router.use(express.json());
 
 router.post('/', (req, res) => {
   const username = req.body.username;
@@ -20,6 +21,7 @@ router.post('/', (req, res) => {
     return;
   }
 
+  // encrypt password
   password = cryptoJS.AES.encrypt(JSON.stringify({ password }), 'secret').toString();
 
   getAllUsers().then((users) => {
