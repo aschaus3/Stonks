@@ -8,10 +8,8 @@ import './listboughtcoin.css'
 const ListBoughtCoin =()=> {
 
     const [ coins, setCoins ] = useState([])
-    const {watchList, deleteCoin } = useContext(WatchList)
+    const { watchList, deleteCoin } = useContext(WatchList)
     const [ isLoading, setIsLoading ] = useState(false);
-
-    console.log(watchList);
 
     useEffect(() => {
         const fetchData = async () =>   {
@@ -19,7 +17,7 @@ const ListBoughtCoin =()=> {
             const response = await CoinGecko.get("/coins/markets", {
                 params: {
                     vs_currency: "cad",
-                    ids: watchList.join(","),
+                    ids: watchList.join(',')
                 },
 
             });
@@ -27,7 +25,7 @@ const ListBoughtCoin =()=> {
             setIsLoading(false);
         };
         fetchData();
-    },[])
+    },[watchList])
 
 
 
