@@ -1,16 +1,4 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link
-} from "react-router-dom";
-import App from '../App';
-import './Trade.css'
-import Coin from '../Api/Coin'
-import axios from 'axios';
-import { useState, useEffect } from 'react';
-import { propTypes } from 'react-bootstrap/esm/Image';
 import { useLocation } from 'react-router-dom'
 
 

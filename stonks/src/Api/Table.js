@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Coin from './Coin'
 import './table.css'
-import { StickyContainer, Sticky } from 'react-sticky'
 import ListBoughtCoin from './ListBoughtCoin';
 import AddCoin from './AddCoin';
 import axios from 'axios';

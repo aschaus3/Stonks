@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './signUp.css';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  useNavigate
+} from "react-router-dom";
 
 const URL = 'http://localhost:5000';
 
@@ -29,19 +36,21 @@ class SignUp extends Component
   render() {
     return (
       <div className="login">
-      <div className="form">
-      <form onSubmit={this.onSubmit}>
-        <div className = "entry">
-        <pre>
-          Username: &nbsp; <input id="usr" type="text" ref={usr => (this.usrName = usr)} className="username"/><br></br>
-          Password: &nbsp; <input type="text" ref={pass => (this.pass = pass)} className="password"/>
-        </pre>
+        <div className="form">
+          <h1 style={{paddingBottom:"20px"}}> Sign Up </h1>
+          <form onSubmit={this.onSubmit}>
+            <input id="usr" type="text" ref={usr => (this.usrName = usr)} placeholder="Username" required/><br/>
+            <input type="text" ref={pass => (this.pass = pass)} placeholder="Password" required/>
+          <div className="submit">
+            <input type="submit" className="submit-button"/>
+          </div>
+          </form>
+          <br/>
+          <div>
+              Already have an account?
+              <button className="submitbtn"><Link className='submitbtn' to="/">Login</Link></button>
         </div>
-        <div className="submit">
-        <input type="submit" className="submit-button" />
         </div>
-      </form>
-      </div>
       </div>
     );
   }

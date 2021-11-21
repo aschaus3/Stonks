@@ -45,7 +45,7 @@ async function addUser(username, password) {
   }
 }
 
-// function to insert user
+// function to insert transaction
 async function addTransaction(UserID, coin, isSelling, isBuying) {
   // db connection stuff
   const conn = createConnection();
