@@ -34,11 +34,6 @@ router.post('/', (req, res) => {
     }
 
     addUser(username, password).then(() => {
-      const token = jwt.sign({ username }, secret, {
-        expiresIn: '1h'
-      });
-      // write cookie
-      res.cookie('token', token, { httpOnly: true }).sendStatus(200);
 
       res.send({ msg: 'User Added Successfully!' });
       return;

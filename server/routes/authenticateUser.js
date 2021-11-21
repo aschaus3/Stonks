@@ -14,9 +14,6 @@ router.use(express.json());
 
 router.post('/', (req, res) => {
 
-  console.log("request");
-  console.log(req.body);
-
   const username = req.body.username;
   const password = req.body.password;
 
@@ -39,8 +36,9 @@ router.post('/', (req, res) => {
 
         decryptedPassword = JSON.parse(decryptedPassword);
 
-        if (decryptedPassword.password === password)
-          res.send({msg: 'User Authentication Successful!', user: rows[0].Username});
+        if (decryptedPassword.password === password) {
+          res.send({ msg: 'User Authentication Successful!' });
+        }
         else
           res.send({errMsg: 'User Authentication Unsuccessful\n Username and/or Password Wrong!'});
       } else {

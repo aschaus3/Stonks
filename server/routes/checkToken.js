@@ -5,7 +5,7 @@ const withAuth = require('./withAuth');
 
 router.get('/', withAuth, (req, res) => {
   res.send({
-    user: req.user
+    user: req.username
   });
 });
 
