@@ -1,6 +1,7 @@
 // import required packages and modules
 const express = require('express');
 const cryptoJS = require('crypto-js');
+const jwt = require('jsonwebtoken');
 const { getAllUsers, addUser } = require('../database/asyncQueries');
 
 // use the express router
@@ -33,12 +34,17 @@ router.post('/', (req, res) => {
     }
 
     addUser(username, password).then(() => {
+
       res.send({ msg: 'User Added Successfully!' });
       return;
-    }).catch((err) => { console.log(err) });
+    }).catch((err) => {
+      console.log(err);
+      res.send({ errMsg: 'Error Adding User!' });
+    });
 
   }).catch((err) => {
     console.log(err);
+    res.send({ errMsg: 'Error Adding User!' });
   });
 });
 
