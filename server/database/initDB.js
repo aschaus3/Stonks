@@ -57,6 +57,7 @@ conn.query(`
   CREATE TABLE ${watchList} (
     UserID INT
     ,CoinID VARCHAR(50)
+    ,FOREIGN KEY (UserID) ${user}(UserID)
   );
 `, (err) => {
   if (err) throw (err);
