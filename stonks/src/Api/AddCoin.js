@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react'
 import {WatchList} from "./context/WatchList"
 import axios from 'axios';
+import "./AddCoin.css"
 
 
 function AddCoin() {
@@ -29,12 +30,14 @@ function AddCoin() {
     return (
         <div className="dropdown">
             <button className="btn btn-primary dropdown-toggle" type="button" onClick={() => setActive(!isActive)}> Add Coin </button>
-            <div className={isActive ? "dropdown-menu show" : "dropdown-menu"}>
+            <div className = "dropdownBox">
+              <div className={isActive ? "dropdown-menu show" : "dropdown-menu"} style={{maxHeight:"250px", overflowY:"scroll" }}>
                 {availableCoins.map(el => {
                     return(
                         <a onClick={() => handleClick(el["id"])} href="#" className="dropdown-item">{el["name"]}</a>
                     )
                 })}
+                </div>
             </div>
         </div>
     );

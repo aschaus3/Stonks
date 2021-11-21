@@ -1,0 +1,11 @@
+.dropdown{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdownBox{
+    display: flex;
+    justify-content: center;
+
+}
