@@ -21,6 +21,12 @@
     border: 1px solid #d7d7d7;
     border-radius: 25px;
     width: 700px;
+    height: 400px;
+}
+
+.expandDiv {
+    height: 400px;
+    min-height: 300px;
 }
 /*.buy-button{
     background-color:gold;

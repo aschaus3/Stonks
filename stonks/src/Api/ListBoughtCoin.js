@@ -35,19 +35,19 @@ const ListBoughtCoin =()=> {
         if  (isLoading) {
             return(
                 <div>...loading</div>
-            );
+            )
         }
-
+    
         return(
             <ul className="coinlist list-group mt-2">
                 {coins.map(coin =>  {
                     const { id, name } = coin;
                     return(
                         <Coin id={coin.id}key={name} name={coin.name}
-                          price={coin.current_price} image={coin.image}
-                        symbol={coin.symbol} marketCap={coin.market_cap}
-                        priceChange={coin.price_change_percentage_24h}
-                        volume={coin.total_volume} deleteCoin={deleteCoin} />);
+                            price={coin.current_price} image={coin.image}
+                            symbol={coin.symbol} marketCap={coin.market_cap}
+                            priceChange={coin.price_change_percentage_24h}
+                            volume={coin.total_volume} deleteCoin={deleteCoin} />);
 
                 })}
             </ul>

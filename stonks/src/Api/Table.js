@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import Coin from './Coin'
 import './table.css'
+
 import ListBoughtCoin from './ListBoughtCoin';
 import AddCoin from './AddCoin';
 import axios from 'axios';
@@ -21,7 +22,7 @@ function Table()    {
 
     //creating axios connection
     useEffect(() => {
-        axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=CAD&order=market_cap_desc&per_page=500&page=1&sparkline=false')
+        axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=cad&order=market_cap_desc&per_page=30&page=1&sparkline=false')
             .then(res =>    {
                 setCoins(res.data)
             }).catch(err => console.log(err))
@@ -57,7 +58,8 @@ function Table()    {
                 </div>
                 {filteredCoins.map(coin =>  {
                     return(
-                        <Coin key={coin.id} name={coin.name}
+
+                        <Coin key={coin.id} name={coin.name} route={coin.id}
                         price={coin.current_price} image={coin.image}
                         symbol={coin.symbol} marketCap={coin.market_cap}
                         priceChange={coin.price_change_percentage_24h}

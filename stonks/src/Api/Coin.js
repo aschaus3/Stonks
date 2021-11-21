@@ -1,18 +1,56 @@
-import React, {useState, useContext}  from 'react';
+
+import React, {useState, useContext, useEffect}  from 'react';
 import './coin.css';
 import { FaChevronCircleDown, FaTrash } from 'react-icons/fa';
 import Expand from 'react-expand-animated';
 import {WatchList} from "./context/WatchList"
+import CoinData from './components/CoinData';
+import HistoryChart from './components/HistoryChart';
+import CoinGecko from './CoinGecko';
 
-const Coin = ({ id, coin, image, name, symbol, price, volume, priceChange, marketCap, key}) => {
 
-  const [clicked, setClicked] = useState(false);
-  const {deleteCoin} = useContext(WatchList);
+const Coin = ({ id, image, name, symbol, price, volume, priceChange, marketCap, route }) => {
+  
+    const [clicked, setClicked] = useState(false);
+    const {deleteCoin} = useContext(WatchList);
 
-  console.log(coin);
-  console.log(key);
+    const [ coinData, setCoinData ] = useState([])
 
-  let coinName = name.toLowerCase();
+    const [ isLoading, setIsLoading ] = useState([])
+
+    useEffect(() =>   {
+        const fetchData = async () =>   {
+            setIsLoading(true)
+            const chartResultsMonth = await CoinGecko.get(`/coins/${route}/market_chart?vs_currency=CAD`
+            , {
+                params: {
+                    vs_currency: "cad",
+                    days: "30"
+                    },
+            });
+            console.log(chartResultsMonth.data);
+            setCoinData(chartResultsMonth.data.prices);
+            setIsLoading(false)
+        }  
+        fetchData();
+      },[])
+
+    const renderData = () =>    {
+        
+        if (isLoading) {
+            return <div>...Loading</div>
+        }
+        return(
+            <div className="coinList">
+
+            {/**<CoinData/>
+                <HistoryChart/> */}
+                
+                
+            </div>
+            );
+    }
+    
 
     //UI element
     return (
@@ -53,33 +91,23 @@ const Coin = ({ id, coin, image, name, symbol, price, volume, priceChange, marke
                 </div>
                 <Expand className="expand" open={clicked}>
                     <div className="expandDiv" style={{ width: '300px', height: '400px', color: 'red' }}>
-                        Hello
-                    </div>
-
+                        {renderData()}
+                    </div>            
 
                 </Expand>
-
+            </div>
+        </div>
+    );
+}
 
                 {/*
                 <div className="coinData">
 
                     <h1 className="coinVolume">${volume.toLocaleString()}</h1>
 
-                    {priceChange < 0 ? (
-                    <h1 className="red" >{priceChange.toFixed(2)}%</h1>
-                    ) : (
-                    <h1 className="green" >{priceChange.toFixed(2)}%</h1>
-                    )}
-                    <h1 className="coinMarketCap">
-                        Mkt Cap: ${marketCap.toLocaleString()}
-                    </h1>
-                </div>
 
-                */}
-            </div>
-        </div>
+                </Expand>
 
-
-    );
-};
+        </div>0b68ff2eaa61b2fcbc13e0c41a416bbcfd111d
+        */}
 export default Coin;
