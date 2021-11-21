@@ -3,7 +3,7 @@ import './coin.css';
 import { FaChevronCircleDown, FaTrash } from 'react-icons/fa';
 import Expand from 'react-expand-animated';
 
-const Coin = ({ coin, image, name, symbol, price, volume, priceChange, marketCap, deleteCoin, id }) => {
+const Coin = ({ coin, image, name, symbol, price, volume, priceChange, marketCap, deleteCoin, key}) => {
   
   const [clicked, setClicked] = useState(false);
 
@@ -36,18 +36,19 @@ const Coin = ({ coin, image, name, symbol, price, volume, priceChange, marketCap
                     <i>
                         <FaChevronCircleDown className="icon" onClick={() => setClicked(!clicked)}/>
                     </i> 
+                    <a onClick={(e) => { 
+                                            e.preventDefault();
+                                            console.log(symbol)
+                                            deleteCoin(symbol); 
+                                        }}>
+                        <FaTrash/> 
+                    </a>
                     
                 </div>
                 <Expand className="expand" open={clicked}>
                     <div className="expandDiv" style={{ width: '300px', height: '400px', color: 'red' }}>
                         Hello
                     </div>
-                    <a onClick={(e) => { 
-                                            e.preventDefault();
-                                            deleteCoin(coin.id); 
-                                        }}>
-                        <FaTrash/> 
-                    </a>
                         
                 
                 </Expand>

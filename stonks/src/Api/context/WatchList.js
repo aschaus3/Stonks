@@ -10,8 +10,16 @@ export const WatchListContextProvider = props =>    {
         "ripple",
         "litecoin"
     ]);
+    
+    const addCoin = (coin) => {
+        if(watchList.indexOf(coin) === -1)
+        {
+            setWatchList([...watchList, coin])
+        }
+    }
 
-    const deleteCoin = (coin) => {
+
+    const deleteCoin = (coin) =>    {
         setWatchList(
             watchList.filter(el => {
                 return el !== coin

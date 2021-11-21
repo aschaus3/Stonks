@@ -37,7 +37,7 @@ const ListBoughtCoin =()=> {
         }
         
         return(
-            <ul className="boughtCoin-listComponent">
+            <ul className="coinlist list-group mt-2">
                 {coins.map(coin =>  {
                     return(
                         <Coin key={coin.id} name={coin.name} 
