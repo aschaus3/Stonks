@@ -20,7 +20,7 @@ function AddCoin() {
     return (
         <div className="dropdown">
             <button className="btn btn-primary dropdown-toggle" type="button" onClick={() => setActive(!isActive)}> Add Coin </button>
-            <div className={isActive ? "dropdown-menu show" : "dropdown-menu"}>
+            <div id="drop-list" className={isActive ? "dropdown-menu show" : "dropdown-menu"}>
                 {avalibleCoins.map(el => {
                     return(
                         <a onClick={() => handleClick(el)} href="#" className="dropdown-item">{el}</a>
