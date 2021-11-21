@@ -40,7 +40,7 @@ const ListBoughtCoin =()=> {
             <ul className="boughtCoin-listComponent">
                 {coins.map(coin =>  {
                     return(
-                        <Coin key={coin.id} name={coin.name} 
+                        <Coin key={coin.id} name={coin.id} 
                         price={coin.current_price} image={coin.image}
                         symbol={coin.symbol} marketCap={coin.market_cap}
                         priceChange={coin.price_change_percentage_24h}

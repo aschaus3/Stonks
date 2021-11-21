@@ -5,10 +5,7 @@ export const WatchList = createContext();
 
 export const WatchListContextProvider = props =>    {
     const [ watchList, setWatchList ] = useState([
-        "bitcoin", 
-        "ethereum", 
-        "ripple",
-        "litecoin"
+        
     ]);
 
     const deleteCoin = (coin) =>    {
