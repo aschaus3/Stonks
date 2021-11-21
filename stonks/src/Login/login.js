@@ -14,6 +14,7 @@ const URL = 'http://localhost:5000';
 
 export default function Login() {
 
+  
   let usrName = React.createRef();
   let pass = React.createRef();
 
@@ -38,6 +39,12 @@ export default function Login() {
         }
       })
       .catch((err) => { throw err })
+  }
+
+  export function Uname()
+  {
+    let usrName = React.createRef();
+    return usrName;
   }
 
   return (

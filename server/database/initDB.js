@@ -57,12 +57,20 @@ conn.query(`
   CREATE TABLE ${watchList} (
     UserID INT
     ,CoinID VARCHAR(50)
-    ,FOREIGN KEY (UserID) ${user}(UserID)
+    ,FOREIGN KEY (UserID) REFERENCES ${user}(UserID)
   );
 `, (err) => {
   if (err) throw (err);
 
   console.log(`Successfully Created ${watchList} Table!`);
+});
+
+conn.query(`
+  INSERT INTO ${watchList} VALUES (2, "bitcoin");
+`, (err) => {
+  if (err) throw err;
+
+  console.log('Successfully Added Sample User!');
 });
 
 // close the connection

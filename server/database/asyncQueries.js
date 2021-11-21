@@ -1,4 +1,4 @@
-const { createConnection, user, transactions } = require('./DBVariables');
+const { createConnection, user, transactions, watchList } = require('./DBVariables');
 const util = require('util');
 
 // function to get all users
@@ -66,8 +66,30 @@ async function addTransaction(UserID, coin, isSelling, isBuying) {
   }
 }
 
+// function to insert user
+async function addCrypto(username, cryptoID) {
+  // db connection stuff
+  const conn = createConnection();
+  conn.connect();
+
+  // make the query into a promise
+  const query = util.promisify(conn.query).bind(conn);
+
+  try {
+    await query(`INSERT INTO ${watchList} VALUES ((SELECT UserID FROM ${user} WHERE Username = "${username}"), "${cryptoID}")`);
+  } catch(err) {
+    throw err;
+  } finally {
+    // close connection
+    conn.end();
+
+    return;
+  }
+}
+
 module.exports = {
   getAllUsers: getAllUsers,
   addUser: addUser,
-  addTransaction: addTransaction
+  addTransaction: addTransaction,
+  addCrypto: addCrypto
 }
