@@ -8,7 +8,8 @@ import CoinData from './components/CoinData';
 import HistoryChart from './components/HistoryChart';
 import CoinGecko from './CoinGecko';
 
-const Coin = ({ image, name, symbol, price, volume, priceChange, marketCap }) => {
+
+const Coin = ({ id, image, name, symbol, price, volume, priceChange, marketCap }) => {
   
     const [clicked, setClicked] = useState(false);
     const {deleteCoin} = useContext(WatchList);
@@ -32,7 +33,7 @@ const Coin = ({ image, name, symbol, price, volume, priceChange, marketCap }) =>
             console.log(chartResultsMonth.data);
             setCoinData(chartResultsMonth.data.prices);
             setIsLoading(false)
-        };
+        }  
 
         fetchData();
       },[])
@@ -79,31 +80,36 @@ const Coin = ({ image, name, symbol, price, volume, priceChange, marketCap }) =>
 
                     <i>
                         <FaChevronCircleDown className="icon" onClick={() => setClicked(!clicked)}/>
-                    </i> 
-                    <a onClick={(e) => { 
+                    </i>
+                    <i onClick={(e) => {
                                             e.preventDefault();
-                                            console.log(coinName)
-                                            deleteCoin(coinName);
+                                            deleteCoin(id);
                                         }}>
-                        <FaTrash/> 
-                    </a>
-                    
+                        <FaTrash/>
+                    </i>
+
                 </div>
                 <Expand className="expand" open={clicked}>
+                    
                     <div className="expandDiv" style={{ width: '300px', height: '400px', color: 'red' }}>
-                        {renderData()}
-                    </div>              
-                    <div>
 
-                    </div>
+                        {renderData()}
+                    </div>            
+
+                </Expand>
+            </div>
+        </div>
+    );
+}
+
+                {/*
+                <div className="coinData">
+
+                    <h1 className="coinVolume">${volume.toLocaleString()}</h1>
+
 
                 </Expand>
 
-        </div>
-        </div>
-                
-        );
-    }
-
-  
+        </div>0b68ff2eaa61b2fcbc13e0c41a416bbcfd111d
+        */}
 export default Coin;
