@@ -1,10 +1,12 @@
 import React, {useRef, useEffect } from 'react';
 import { Chart, LineController, LineElement, PointElement, LinearScale, Title, CategoryScale } from 'chart.js';
+import ChartOptions from './chartOptions/ChartOptions'
 Chart.register(LineController, LineElement, PointElement, LinearScale, Title, CategoryScale);
 
-const HistoryChart = ({name}) => {
+const HistoryChart = ({data}) => {
 
     const chartRef = useRef();
+    //const {chartResultsMonth.data.prices} = data;
 
     useEffect(() => {
         if (chartRef && chartRef.current)   {
@@ -12,7 +14,6 @@ const HistoryChart = ({name}) => {
             const chartInstance = new Chart(chartRef.current, {
                 type: 'line',
                 data: {
-                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
                     datasets: [{
                         label: '# of Votes',
                         data: [{x: 1, y: 15}, {x:2, y: 12}, {x:3, y:25} ],
