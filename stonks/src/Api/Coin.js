@@ -34,7 +34,7 @@ const Coin = ({image, name, symbol, price, volume, priceChange, marketCap}) => {
                     </h1>
                 </div>
                 <div className="buy-button">
-                    <Link to="/Trade" className="buy-button" >
+                    <Link to="/Trade" state={{from: name}} className="buy-button">
                         Buy
                     </Link>
                 </div>
