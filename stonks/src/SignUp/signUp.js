@@ -31,9 +31,6 @@ class SignUp extends Component
       <div className="login">
       <div className="form">
       <form onSubmit={this.onSubmit}>
-        <div>
-        <button onClick={() => this.testBackend()}>test</button>
-        </div>
         <div className = "entry">
         <pre>
           Username: &nbsp; <input id="usr" type="text" ref={usr => (this.usrName = usr)} className="username"/><br></br>
