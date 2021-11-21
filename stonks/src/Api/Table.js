@@ -52,7 +52,7 @@ function Table()    {
                 </div>
                 {filteredCoins.map(coin =>  {
                     return(
-                        <Coin coinName={coin.name} name={coin.id} 
+                        <Coin CoinName={coin.name} name={coin.id} 
                         price={coin.current_price} image={coin.image}
                         symbol={coin.symbol} marketCap={coin.market_cap}
                         priceChange={coin.price_change_percentage_24h}

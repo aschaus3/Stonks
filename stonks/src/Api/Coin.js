@@ -1,18 +1,23 @@
-import React, {useState, useEffect}  from 'react';
+
+import React, {useState, useContext, useEffect}  from 'react';
 import './coin.css';
 import { FaChevronCircleDown, FaTrash } from 'react-icons/fa';
 import Expand from 'react-expand-animated';
+import {WatchList} from "./context/WatchList"
 import CoinData from './components/CoinData';
 import HistoryChart from './components/HistoryChart';
 import CoinGecko from './CoinGecko';
 
-const Coin = ({ coinName ,image, name, symbol, price, volume, priceChange, marketCap, deleteCoin }) => {
+const Coin = ({ image, name, symbol, price, volume, priceChange, marketCap }) => {
   
-    const [ clicked, setClicked] = useState(false);
+    const [clicked, setClicked] = useState(false);
+    const {deleteCoin} = useContext(WatchList);
 
     const [ coinData, setCoinData ] = useState([])
 
     const [ isLoading, setIsLoading ] = useState([])
+
+    let coinName = name.toLowerCase();
 
     useEffect(() =>   {
         const fetchData = async () =>   {
@@ -39,89 +44,66 @@ const Coin = ({ coinName ,image, name, symbol, price, volume, priceChange, marke
         }
         return(
             <div className="coinList">
-                
                 <CoinData/>
-                <HistoryChart/>
+                <HistoryChart name={name}/>
             </div>
+            );
+    }
+    
+
+    //UI element
+    return (
+        <div className="coinContainer" >
+            <div className="coinRow" for="expend">
+                <div className="coin" for="extend">
+                    <img src={image} alt="crypto"></img>
+                    <h1>{name}</h1>
+                    <h1 className="coinSymbol">{symbol}</h1>
+                    <h1 className="coinPrice">${price}</h1>
+
+                    {/*<div className="buy-button">
+                    <Link to="/Trade" state={{from:name}}className="buy-button" >
+
+                    <div className="buy-button">
+                    <Link to="/Trade" state={{cName:name, cImg:image}}className="buy-button" >
+
+                        Buy
+                    </Link>
+                    </div>*/}
+
+                    {priceChange < 0 ? (
+                    <h1 className="red" >{priceChange.toFixed(2)}%</h1>
+                    ) : (
+                    <h1 className="green" >{priceChange.toFixed(2)}%</h1>
+                    )}
+
+                    <i>
+                        <FaChevronCircleDown className="icon" onClick={() => setClicked(!clicked)}/>
+                    </i> 
+                    <a onClick={(e) => { 
+                                            e.preventDefault();
+                                            console.log(coinName)
+                                            deleteCoin(coinName);
+                                        }}>
+                        <FaTrash/> 
+                    </a>
+                    
+                </div>
+                <Expand className="expand" open={clicked}>
+                    <div className="expandDiv" style={{ width: '300px', height: '400px', color: 'red' }}>
+                        {renderData()}
+                    </div>              
+                    <div>
+
+                    </div>
+
+                </Expand>
+
+        </div>
+        </div>
+                
         );
     }
 
-//UI elementg
-return (
-    <div className="coinContainer" >
-        <div className="coinRow">
-            <div className="coin" >
-                <img src={image} alt="crypto"></img>
-                <h1>{coinName}</h1>
-                <h1 className="coinSymbol">{symbol}</h1>
-                <h1 className="coinPrice">${price}</h1>
-
-                {/*<div className="buy-button">
-                <Link to="/Trade" state={{from:name}}className="buy-button" >
-
-                <div className="buy-button">
-                <Link to="/Trade" state={{cName:name, cImg:image}}className="buy-button" >
-
-                    Buy
-                </Link>
-                </div>*/}
-
-                {priceChange < 0 ? (
-                <h1 className="red" >{priceChange.toFixed(2)}%</h1>
-                ) : (
-                <h1 className="green" >{priceChange.toFixed(2)}%</h1>
-                )}
-
-                <i >
-                    <FaChevronCircleDown className="icon" onClick={() => setClicked(!clicked)}/>
-                </i> 
-                
-            </div>
-            <Expand className="expand" open={clicked}>
-                
-                <div className="expandDiv">
-                    <FaTrash/> 
-
-                </div>
-
-                <div className="coinList">
-                    {renderData()}
-                </div>
-
-                
-                {/* <a onClick={(e) => { 
-                                        e.preventDefault();
-                                        deleteCoin(coin); 
-                                    }}>
-                </a>
-                */}
-                    
-                
-                    
-            
-            </Expand>
-            
-
-            {/*
-            <div className="coinData">
-                
-                <h1 className="coinVolume">${volume.toLocaleString()}</h1>
-
-                {priceChange < 0 ? (
-                <h1 className="red" >{priceChange.toFixed(2)}%</h1>
-                ) : (
-                <h1 className="green" >{priceChange.toFixed(2)}%</h1>
-                )}
-                <h1 className="coinMarketCap">
-                    Mkt Cap: ${marketCap.toLocaleString()}
-                </h1>
-            </div>
-
-            */}
-        </div>
-    </div>
-    
-        
-);
-};  
+  
 export default Coin;
