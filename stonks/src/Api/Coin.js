@@ -1,11 +1,15 @@
-import React, {useState}  from 'react';
+import React, {useState, useContext}  from 'react';
 import './coin.css';
 import { FaChevronCircleDown, FaTrash } from 'react-icons/fa';
 import Expand from 'react-expand-animated';
+import {WatchList} from "./context/WatchList"
 
-const Coin = ({ coin, image, name, symbol, price, volume, priceChange, marketCap, deleteCoin, key}) => {
+const Coin = ({ coin, image, name, symbol, price, volume, priceChange, marketCap, key}) => {
   
   const [clicked, setClicked] = useState(false);
+  const {deleteCoin} = useContext(WatchList);
+
+  let coinName = name;
 
     //UI element
     return (
@@ -38,8 +42,8 @@ const Coin = ({ coin, image, name, symbol, price, volume, priceChange, marketCap
                     </i> 
                     <a onClick={(e) => { 
                                             e.preventDefault();
-                                            console.log(symbol)
-                                            deleteCoin(symbol); 
+                                            console.log(coin)
+                                            deleteCoin(coin.name);
                                         }}>
                         <FaTrash/> 
                     </a>
