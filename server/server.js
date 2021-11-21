@@ -7,7 +7,6 @@ const cookieParser = require('cookie-parser');
 const testAPIRoute = require('./routes/testAPI');
 const addUser = require('./routes/addUser');
 const authenticateUser = require('./routes/authenticateUser');
-const addTransaction = require('./routes/addTransaction');
 
 // create the server object
 const app = express();
@@ -23,7 +22,6 @@ app.use(cookieParser());
 app.use('/', testAPIRoute);
 app.use('/add-user', addUser);
 app.use('/authenticate-user', authenticateUser);
-app.use('/add-transaction', addTransaction);
 
 // app listing on the specified port
 app.listen(port);
