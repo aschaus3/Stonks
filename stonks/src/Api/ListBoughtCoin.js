@@ -35,9 +35,9 @@ const ListBoughtCoin =()=> {
         if  (isLoading) {
             return(
                 <div>...loading</div>
-            );
+            )
         }
-
+    
         return(
             <ul className="coinlist list-group mt-2">
                 {coins.map(coin =>  {

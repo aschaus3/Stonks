@@ -9,7 +9,7 @@ import HistoryChart from './components/HistoryChart';
 import CoinGecko from './CoinGecko';
 
 
-const Coin = ({ id, image, name, symbol, price, volume, priceChange, marketCap }) => {
+const Coin = ({ id, image, name, symbol, price, volume, priceChange, marketCap, route }) => {
   
     const [clicked, setClicked] = useState(false);
     const {deleteCoin} = useContext(WatchList);
@@ -18,12 +18,10 @@ const Coin = ({ id, image, name, symbol, price, volume, priceChange, marketCap }
 
     const [ isLoading, setIsLoading ] = useState([])
 
-    let coinName = name.toLowerCase();
-
     useEffect(() =>   {
         const fetchData = async () =>   {
             setIsLoading(true)
-            const chartResultsMonth = await CoinGecko.get(`/coins/${name}/market_chart?vs_currency=CAD`
+            const chartResultsMonth = await CoinGecko.get(`/coins/${route}/market_chart?vs_currency=CAD`
             , {
                 params: {
                     vs_currency: "cad",
@@ -34,7 +32,6 @@ const Coin = ({ id, image, name, symbol, price, volume, priceChange, marketCap }
             setCoinData(chartResultsMonth.data.prices);
             setIsLoading(false)
         }  
-
         fetchData();
       },[])
 
@@ -45,8 +42,11 @@ const Coin = ({ id, image, name, symbol, price, volume, priceChange, marketCap }
         }
         return(
             <div className="coinList">
-                <CoinData/>
-                <HistoryChart name={name}/>
+
+            {/**<CoinData/>
+                <HistoryChart/> */}
+                
+                
             </div>
             );
     }
@@ -90,9 +90,7 @@ const Coin = ({ id, image, name, symbol, price, volume, priceChange, marketCap }
 
                 </div>
                 <Expand className="expand" open={clicked}>
-                    
                     <div className="expandDiv" style={{ width: '300px', height: '400px', color: 'red' }}>
-
                         {renderData()}
                     </div>            
 
