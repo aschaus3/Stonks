@@ -32,7 +32,7 @@ function AddCoin() {
             <div className={isActive ? "dropdown-menu show" : "dropdown-menu"}>
                 {availableCoins.map(el => {
                     return(
-                        <a onClick={() => handleClick(el["name"])} href="#" className="dropdown-item">{el["name"]}</a>
+                        <a onClick={() => handleClick(el["id"])} href="#" className="dropdown-item">{el["name"]}</a>
                     )
                 })}
             </div>
