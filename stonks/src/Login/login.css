@@ -40,9 +40,20 @@
     padding-left: 5px;
     padding-right: 5px;
     border-color:grey;
+    margin-right: 5px;
 }
-
+.submitbtn{
+    background-color: gold;
+    color: black;
+    height: 40px;
+    text-decoration: none;
+}
+.submitbtn :hover{
+    color: black;
+    text-decoration: none;
+}
 .buttons{
+    padding-top: 5px;
     display: flex;
     justify-content: center;
 }
