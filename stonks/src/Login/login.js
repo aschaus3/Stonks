@@ -45,11 +45,14 @@ export default function Login() {
       <div className="login-body">
         <div> Login </div>
         <form action="auth" onSubmit={SubmitForm}>
-            <input type="text" name="username" ref={usr => (usrName = usr)} placeholder="Username" required/>
-            <input type="password" name="password" ref={passwrd => (pass = passwrd)} placeholder="Password" required/>
-            <Link id="Login-Link" to="/App">Home</Link>
-            <button type="submit">Submit</button>
+            <input type="text" name="username" ref={usr => (usrName = usr)} placeholder="Username" required/> <br/>
+            <input type="password" name="password" ref={passwrd => (pass = passwrd)} placeholder="Password" required/> <br/>
+            <div className='buttons'>
+            <Link id='Login-Link' to="/App" >Home</Link>
+            <button type="submit" className='Login-Link'>Submit</button>
+            </div>
           </form>
+          <br/>
           <div>
           Don't have an account,
               <Link id="Login-Link" to="/signUp">Sign Up</Link>
