@@ -4,11 +4,12 @@ import { FaChevronCircleDown, FaTrash } from 'react-icons/fa';
 import Expand from 'react-expand-animated';
 import {WatchList} from "./context/WatchList"
 
-const Coin = ({ coin, image, name, symbol, price, volume, priceChange, marketCap, key}) => {
-  
+const Coin = ({ id, coin, image, name, symbol, price, volume, priceChange, marketCap, key}) => {
+
   const [clicked, setClicked] = useState(false);
   const {deleteCoin} = useContext(WatchList);
 
+  console.log(coin);
   console.log(key);
 
   let coinName = name.toLowerCase();
@@ -41,28 +42,27 @@ const Coin = ({ coin, image, name, symbol, price, volume, priceChange, marketCap
 
                     <i>
                         <FaChevronCircleDown className="icon" onClick={() => setClicked(!clicked)}/>
-                    </i> 
-                    <a onClick={(e) => { 
+                    </i>
+                    <i onClick={(e) => {
                                             e.preventDefault();
-                                            console.log(coinName)
-                                            deleteCoin(coinName);
+                                            deleteCoin(id);
                                         }}>
-                        <FaTrash/> 
-                    </a>
-                    
+                        <FaTrash/>
+                    </i>
+
                 </div>
                 <Expand className="expand" open={clicked}>
                     <div className="expandDiv" style={{ width: '300px', height: '400px', color: 'red' }}>
                         Hello
                     </div>
-                        
-                
+
+
                 </Expand>
-                
+
 
                 {/*
                 <div className="coinData">
-                    
+
                     <h1 className="coinVolume">${volume.toLocaleString()}</h1>
 
                     {priceChange < 0 ? (
@@ -78,8 +78,8 @@ const Coin = ({ coin, image, name, symbol, price, volume, priceChange, marketCap
                 */}
             </div>
         </div>
-        
-            
+
+
     );
-};  
+};
 export default Coin;
